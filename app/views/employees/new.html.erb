@@ -29,6 +29,9 @@
     <div class="col-sm">
         <%= form.label :profile_image %>
         <%= form.file_field :profile_image, class:"form-control" %>
+        <% @employee.errors.full_messages_for(:profile_image).each do | message | %>
+            <small class="text-danger"><%= message %></small>
+            <% end %>
     </div>
 </div>
 <div class="row">
