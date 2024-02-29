@@ -14,6 +14,7 @@ class EmployeesController < ApplicationController
     def create
         @employee = Employee.create(employee_params)
         if @employee.save
+            EmployeeMailer.with(employee: @employee).welcome_email.deliver_later
             redirect_to @employee
         else
             render :new, status: :unprocessable_entity
@@ -40,6 +41,6 @@ class EmployeesController < ApplicationController
 
     private
     def employee_params
-        params.require(:employee).permit(:name, :joining_date, company_name, :position, :profile_image)
+        params.require(:employee).permit(:name, :joining_date, :company_name, :position, :profile_image, :email)
     end
 end

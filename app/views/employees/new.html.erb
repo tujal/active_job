@@ -1,0 +1,43 @@
+<%= render "nav" %>
+<h4 class="text-center mt-3"> New employee </h4>
+<div class="container w-50 bg-white">
+<%= form_with model: @employee do | form| %>
+<div class="row">
+    <div class="col-sm">
+        <%= form.label :name %>
+        <%= form.text_field :name, class:"form-control" %>
+    </div>
+    <div class="col-sm">
+        <%= form.label :position %>
+        <%= form.text_field :position, class:"form-control" %>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm">
+        <%= form.label :joining_date %>
+        <%= form.date_field :joining_date, class:"form-control" %>
+    </div>
+    <div class="col-sm">
+        <%= form.label :profile_image %>
+        <%= form.file_field :profile_image, class:"form-control" %>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm">
+        <%= form.label :email %>
+        <%= form.text_field :email, class:"form-control" %>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm">
+        <%= form.label :company_name %>
+        <%= form.text_field :company_name, class:"form-control" %>
+    </div>
+</div>
+    <div><br>
+    <%= form.submit class:"btn btn-success btn-sm" %>
+    <%= link_to "Back", root_path, class:"btn btn-primary btn-sm" %>
+    </div>
+<% end %>
+<br>
+</div>

@@ -1,0 +1,39 @@
+<%= render "nav" %>
+<h4 class="text-center"> Employee Details </h4>
+<div class="container bg-white">
+    <div class="row">
+        <div class="col-sm-4 text-center">
+            <%= image_tag(@employee.profile_image, size:"300x300" ,class:"rounded-circle border border-success border-5") if @employee.profile_image.attached? %>
+        </div>
+        <div class="col mt-4">
+        <div >
+        <%= link_to "edit", edit_employee_path(@employee) , class:"btn btn-primary btn-sm" %>
+        <%= link_to "delete", @employee ,data:{
+            turbo_method: :delete,
+            turbo_confirm: "Are you sure?"
+        }, class:"btn btn-danger btn-sm" %>
+        </div>
+
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td><h5 class="fw-normal"> <b> Name :- </b><%= @employee.name %></h5></td>
+                    </tr>
+                    <tr>
+                        <td><h5 class="fw-normal"> <b> Postion :- </b><%= @employee.position %></h5></td>
+                    </tr>
+                    <tr>
+                        <td><h5 class="fw-normal"> <b> Joining_date :- </b><%= @employee.joining_date %></h5></td>
+                    </tr>
+                    <tr>
+                        <td><h5 class="fw-normal"> <b> Company_name :- </b><%= @employee.company_name %></h5></td>
+                    </tr>
+                </tbody>
+            </table>
+            <%= link_to "Back", root_path, class: "btn btn-primary btn-sm" %>
+        </div>
+    </div>
+</div>
+
+
+

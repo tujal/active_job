@@ -3,20 +3,20 @@
 <div class="container">
 <table class="table">
 <thead>
-<th> Name </th>
-<th> Position</th>
-<th></th>
-<th></th>
-<th></th>
+    <th> Name </th>
+    <th> Position</th>
+    <th></th>
+    <th></th>
+    <th></th>
 </thead>
 <% @employees.reverse.each do | employee | %>
 <tbody>
-<tr>
-<td><%= employee.name %></td>
-<td><%= employee.position %></td>
-<td> hfuishfcviushfi</td>
-</tr>
-
+    <tr>
+        <td><%= employee.name %></td>
+        <td><%= employee.position %></td>
+        <td><%= link_to "View", employee, class:"btn btn-success btn-sm" %></td>
+        <td><%= link_to "edit", edit_employee_path(employee), class:"btn btn-warning btn-sm" %></td>
+    </tr>
 </tbody>
 <% end %>
 </table>
