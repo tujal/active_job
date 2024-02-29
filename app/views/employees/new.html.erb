@@ -6,16 +6,25 @@
     <div class="col-sm">
         <%= form.label :name %>
         <%= form.text_field :name, class:"form-control" %>
+        <% @employee.errors.full_messages_for(:name).each do | message | %>
+            <small class="text-danger"><%= message %></small>
+            <% end %>
     </div>
     <div class="col-sm">
         <%= form.label :position %>
         <%= form.text_field :position, class:"form-control" %>
+        <% @employee.errors.full_messages_for(:position).each do | message | %>
+            <small class="text-danger"><%= message %></small>
+            <% end %>
     </div>
 </div>
 <div class="row">
     <div class="col-sm">
         <%= form.label :joining_date %>
         <%= form.date_field :joining_date, class:"form-control" %>
+        <% @employee.errors.full_messages_for(:joining_date).each do | message | %>
+            <small class="text-danger"><%= message %></small>
+            <% end %>
     </div>
     <div class="col-sm">
         <%= form.label :profile_image %>
@@ -26,12 +35,18 @@
     <div class="col-sm">
         <%= form.label :email %>
         <%= form.text_field :email, class:"form-control" %>
+        <% @employee.errors.full_messages_for(:email).each do | message | %>
+            <small class="text-danger"><%= message %></small>
+            <% end %>
     </div>
 </div>
 <div class="row">
     <div class="col-sm">
         <%= form.label :company_name %>
         <%= form.text_field :company_name, class:"form-control" %>
+        <% @employee.errors.full_messages_for(:company_name).each do | message | %>
+            <small class="text-danger"><%= message %></small>
+            <% end %>
     </div>
 </div>
     <div><br>
