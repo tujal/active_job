@@ -1,0 +1,23 @@
+<%= render "nav" %>
+<h4 class="text-center mt-3"> Employee listing </h4>
+<div class="container">
+<table class="table">
+<thead>
+<th> Name </th>
+<th> Position</th>
+<th></th>
+<th></th>
+<th></th>
+</thead>
+<% @employees.reverse.each do | employee | %>
+<tbody>
+<tr>
+<td><%= employee.name %></td>
+<td><%= employee.position %></td>
+<td> </td>
+</tr>
+
+</tbody>
+<% end %>
+</table>
+</div>

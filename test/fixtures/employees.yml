@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  position: MyString
+  joining_date: 2024-02-29
+  company_name: MyString
+
+two:
+  name: MyString
+  position: MyString
+  joining_date: 2024-02-29
+  company_name: MyString
